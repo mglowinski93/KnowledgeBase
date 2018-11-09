@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),#wyszukiwanie pustego wyrazenia regularnego.Znak ^ to poczatek stringu, a $ koniec
     url(r'^topics/', views.topics, name='topics'),
     url(r'^topic/(?P<topic_id>\d)', views.topic, name='topic'),
+    url(r'^content/(?P<entry_id>\d)', views.entry_content, name='entry_content'),
 ]
