@@ -2,7 +2,9 @@
 
 {% block content %}
 
-  <p>Entry: {{ entry.title }}</p>
-  <p>Entry: {{ entry.text }}</p>
+  <p>Title: {{ entry.title }}</p>
+  <p>{{ entry.text }}</p>
+  <br><br>
+  <p><a href="{% url 'learning_logs:edit_entry' entry.id %}"> Edit </a></p>
 
 {% endblock content %}

@@ -3,7 +3,6 @@
 {% block content %}
 
   <p>Topic: {{ topic }}</p>
-
   <p>Entries:</p>
   <ul>
   {% for entry in entries %}
@@ -16,5 +15,6 @@
     </li>
   {% endfor %}
   </ul>
-
+<br><br>
+<p><a href="{% url 'learning_logs:new_entry' topic.id %}">Add new entry</a></p>
 {% endblock content %}
