@@ -2,14 +2,16 @@
 
 {% block content  %}
 
-<p>Topics</p>
-<ul>
+<div = "container">
+<h2>Topics</h2>
+<div class="list-group">
     {% for topic in topics %}
-        <li><a href="{% url 'learning_logs:topic' topic.id %}"> {{ topic }} </a></li>
+        <a href="{% url 'learning_logs:topic' topic.id %}"> {{ topic }} </a>
     {% empty %}
         <li>No topics added</li>
     {% endfor %}
-</ul>
+</div>
+</div>
 <a href="{% url 'learning_logs:new_topic' %}">Add a new topic</a>
 
 {% endblock  %}
