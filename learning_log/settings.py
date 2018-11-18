@@ -25,7 +25,7 @@ SECRET_KEY = 'u^vcc^$i$0ljp*(txv6y0j36$_bnqkittdbkvj%#13g+b1e08@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.102']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -130,3 +130,17 @@ STATIC_URL = '/static/'
 LOGOUT_REDIRECT_URL = '/'#Przekierowanie po wylogowaniu
 
 LOGIN_URL = '/users/login'
+
+if os.getcwd() == '/app':
+    import dj_database_url
+    DATABASE = {
+        'default' : dj_database_url.config(default='postgres://localhost')
+}
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARD_PROTO', 'https')
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static')
+)
